@@ -10,7 +10,7 @@ $ npm install --save-dev redux-saga-test-path
 
 ### In your tests, wrap your iterators
 
-```text
+```javascript
 import i from 'redux-saga-test-path';
 
 function* counter() {
@@ -23,7 +23,7 @@ const itr = i(counter());
 
 ### write your tests
 
-```
+```javascript
 import 'redux-saga-test-path/extend-expect';
 
 test('the iterator works', () => {
