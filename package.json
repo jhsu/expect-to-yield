@@ -4,7 +4,9 @@
   "description": "testing redux-saga sagas one next() at a time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js",
+    "test": "jest"
   },
   "author": "Joe Hsu <jhsu.x1@gmail.com> (http://twitter.com/jhsu)",
   "license": "MIT",
@@ -13,5 +15,8 @@
     "@babel/preset-env": "^7.3.4",
     "jest": "^24.3.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+    "setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
+  }
 }
