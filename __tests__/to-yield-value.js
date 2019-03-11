@@ -1,6 +1,4 @@
-import { isTerminatorless } from "@babel/types";
-
-import i from "../index";
+import { iteratorWithHistory as i } from "../index";
 
 test(".toYieldValue", () => {
   function* gen() {
@@ -63,5 +61,41 @@ test(".toYieldValue errors with history and indicator of the seen value", () => 
   1: 1
 > 2: 2
   3: 3
+`);
+});
+
+test('should output a suggestion on failure', () => {
+  function* gen() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+  const itr = i(gen());
+  itr.next();
+  itr.next();
+  expect(() => {
+    expect(itr).toYieldValue(2);
+  }).toThrowError(`
+suggestion:
+  itr.next();
+  expect(itr).toYieldValue(2);
+`);
+});
+
+test('should output a suggestion with next arguments', () => {
+  function* gen() {
+    const a = yield 1;
+    yield 2;
+    yield a + 1;
+    yield 4;
+  }
+  const itr = i(gen());
+  itr.next();
+  itr.next(2);
+  itr.next();
+  expect(() => expect(itr).toYieldValue(3) ).toThrowError(`suggestion:
+  itr.next();
+  itr.next(2);
+  expect(itr).toYieldValue(3);
 `);
 });
