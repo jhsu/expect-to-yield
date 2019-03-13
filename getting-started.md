@@ -24,6 +24,7 @@ const itr = i(counter());
 ### write your tests
 
 ```javascript
+// extend expect to have `.toYieldValue(...)
 import 'expect-to-yield/extend-expect';
 
 test('the iterator works', () => {
