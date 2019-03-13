@@ -1,12 +1,12 @@
 {
-  "name": "redux-saga-test-path",
+  "name": "expect-to-yield",
   "version": "1.0.0",
   "author": "Joe Hsu <jhsu.x1@gmail.com> (http://twitter.com/jhsu)",
   "license": "MIT",
-  "description": "testing redux-saga sagas one next() at a time",
-  "main": "./dist/redux-saga-test-path.cjs.js",
-  "module": "./dist/redux-saga-test-path.esm.js",
-  "browser": "dist/redux-saga-test-path.umd.js",
+  "description": "testing generator functions one next() at a time",
+  "main": "./dist/expect-to-yield.cjs.js",
+  "module": "./dist/expect-to-yield.esm.js",
+  "browser": "dist/expect-to-yield.umd.js",
   "scripts": {
     "test": "jest",
     "build": "rollup -c"
@@ -20,11 +20,7 @@
     "rollup-plugin-node-resolve": "^4.0.1"
   },
   "dependencies": {},
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/setupTests.js"
-    ]
-  },
+  "jest": {},
   "files": [
     "dist"
   ]
