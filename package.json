@@ -20,7 +20,12 @@
     "rollup-plugin-node-resolve": "^4.0.1"
   },
   "dependencies": {},
-  "jest": {},
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/examples/"
+    ]
+  },
   "files": [
     "dist"
   ]
