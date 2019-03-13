@@ -5,13 +5,13 @@
 Becoming a super hero is a fairly straight forward process:
 
 ```
-$ npm install --save-dev redux-saga-test-path
+$ npm install --save-dev expect-to-yield
 ```
 
 ### In your tests, wrap your iterators
 
 ```javascript
-import i from 'redux-saga-test-path';
+import { iteratorWithHistory as i } from 'expect-to-yield';
 
 function* counter() {
     yield 1;
@@ -24,7 +24,7 @@ const itr = i(counter());
 ### write your tests
 
 ```javascript
-import 'redux-saga-test-path/extend-expect';
+import 'expect-to-yield/extend-expect';
 
 test('the iterator works', () => {
     const itr = i(counter());

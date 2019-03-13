@@ -1,6 +1,7 @@
 import { iteratorWithHistory as i } from "../index";
+import '../extend-expect';
 
-test(".toYieldValue", () => {
+test(".toYieldValue passes when the value is yielded", () => {
   function* gen() {
     yield 1;
   }
@@ -15,7 +16,7 @@ test(".toYieldValue errors with expected value", () => {
   const itr = i(gen());
   expect(() => {
     expect(itr).toYieldValue(1);
-  }).toThrowError("expected: 1");
+  }).toThrowError("expected: 1\nreceived: 2");
 });
 
 test(".toYieldValue errors with received", () => {
@@ -98,4 +99,14 @@ test('should output a suggestion with next arguments', () => {
   itr.next(2);
   expect(itr).toYieldValue(3);
 `);
+});
+
+test('should not have a suggestion when the expectation is not found', () => {
+  function* gen() {
+    yield 1;
+    yield 2;
+  }
+  const itr = i(gen());
+  itr.next();
+  expect(() => expect(itr).toYieldValue(3) ).not.toThrowError('suggestion');
 });

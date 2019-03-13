@@ -25,7 +25,7 @@ function toYieldValue(iter, expected) {
       return `${equalsExpected ? ">" : " "} ${idx + 1}: ${val}`
     }
   );
-  const suggestion = foundIdx >= 0 ? `\nsuggestion:\n${generateSuggestion(foundIdx, expected, iter.history)}` : null;
+  const suggestion = foundIdx >= 0 ? `\nsuggestion:\n${generateSuggestion(foundIdx, expected, iter.history)}` : '';
   const pass = this.equals(nextStep.value, expected);
   return {
     pass,
