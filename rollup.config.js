@@ -5,7 +5,7 @@ import pkg from './package.json';
 export default [
     // browser-friendly UMD build
     {
-        input: 'index.js',
+        input: 'src/index.js',
         output: {
             name: 'index',
             file: pkg.browser,
@@ -21,14 +21,22 @@ export default [
     // (We could have three entries in the configuration array
     // instead of two, but it's quicker to generate multiple
     // builds from a single configuration where possible, using
-    // an array for the `output` option, where we can specify 
+    // an array for the `output` option, where we can specify
     // `file` and `format` for each target)
     {
-        input: 'index.js',
+        input: 'src/index.js',
         external: ['ms'],
         output: [
             { file: pkg.main, format: 'cjs' },
             { file: pkg.module, format: 'es' }
         ]
-    }
+    },
+    {
+        input: 'src/extend-expect.js',
+        external: ['ms'],
+        output: [
+            { file: 'extend-expect.js', format: 'cjs' },
+        ]
+    },
+
 ];

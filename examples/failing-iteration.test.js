@@ -1,5 +1,5 @@
-import { iteratorWithHistory as i } from '../index';
-import '../extend-expect';
+import { iteratorWithHistory as i } from '../src/index';
+import '../src/extend-expect';
 
 test('failing with suggestion', () => {
   function* count() {
