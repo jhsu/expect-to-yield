@@ -1,6 +1,6 @@
 {
   "name": "expect-to-yield",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Joe Hsu <jhsu.x1@gmail.com> (http://twitter.com/jhsu)",
   "license": "MIT",
   "description": "testing generator functions one next() at a time",
