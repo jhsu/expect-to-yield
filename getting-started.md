@@ -4,7 +4,7 @@
 
 Becoming a super hero is a fairly straight forward process:
 
-```
+```text
 $ npm install --save-dev expect-to-yield
 ```
 
@@ -36,10 +36,8 @@ test('the iterator works', () => {
     // history:
     // > 1: 1
     //   2: 2
+    // suggestion:
+    //   expect(itr).toYieldValue(1);
 });
-
-
 ```
-
-
 
