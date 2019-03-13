@@ -27,6 +27,7 @@
     ]
   },
   "files": [
-    "dist"
+    "dist",
+    "extend-expect.js"
   ]
 }
